@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* SOHABI icon palette only: cream paper, warm off-white, charcoal ink. */
+    --background: 46 46% 93%; /* #F5F1E4 */
+    --background-warm: 41 70% 95%; /* #FBF5E8 */
+    --background-white: 0 0% 100%; /* #FFFFFF */
+    --foreground: 77 8% 18%; /* #2F312A */
+    --foreground-deep: 100 5% 13%; /* #20221F */
+
+    --muted: 47 7% 62%; /* #A4A196 */
+    --muted-foreground: 17 4% 39%; /* #66615F */
+    --muted-foreground-light: 47 10% 74%; /* #C3C0B5 */
+    --muted-foreground-dark: 100 1% 50%; /* #80827F */
+
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 77 8% 18%; /* #2F312A */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 77 8% 18%;
+
+    --surface-warm: 41 70% 95%; /* #FBF5E8 */
+    --surface-recessed: 43 22% 84%; /* #E0DBCE */
+    --border: 60 1% 83%; /* #D5D5D4 */
+    --border-light: 47 10% 74% / 0.55; /* #C3C0B5 */
+    --border-dark: 17 4% 39% / 0.35; /* #66615F */
+
+    --primary: 77 8% 18%; /* #2F312A - icon ink */
+    --primary-foreground: 46 46% 93%; /* #F5F1E4 */
+    --primary-light: 47 10% 74%; /* #C3C0B5 */
+    --primary-dark: 100 5% 13%; /* #20221F */
+
+    --secondary: 41 70% 95%; /* #FBF5E8 */
+    --secondary-foreground: 77 8% 18%;
+
+    --accent: 43 22% 84%; /* #E0DBCE */
+    --accent-foreground: 77 8% 18%;
+    --accent-coral: 17 4% 39%; /* #66615F */
+    --accent-sunshine: 41 70% 95%; /* #FBF5E8 */
+
+    --input: 60 1% 83%;
+    --ring: 77 8% 18%;
+    --destructive: 17 4% 39%;
+    --destructive-foreground: 46 46% 93%;
+
+    --radius: 0.5rem;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply bg-[#F5F1E4];
+    font-family: var(--font-sf-pro);
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-[#F5F1E4] text-[#2F312A];
+    font-family: var(--font-sf-pro);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 500;
+    letter-spacing: -0.035em;
+  }
+
+  b,
+  strong {
+    font-weight: 500;
+  }
+}
