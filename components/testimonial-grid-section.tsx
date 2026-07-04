@@ -65,7 +65,7 @@ const TestimonialCard = ({ quote, name, company, avatar, type }) => {
   const avatarBorderRadius = isLargeCard ? "rounded-[41px]" : "rounded-[30.75px]"
   const padding = isLargeCard ? "p-6" : "p-[30px]"
 
-  let cardClasses = `flex flex-col justify-between items-start overflow-hidden rounded-[10px] shadow-[0px_2px_4px_rgba(0,0,0,0.08)] relative ${padding}`
+  let cardClasses = `flex flex-col justify-between items-start overflow-hidden rounded-[10px] shadow-[0_12px_30px_hsl(var(--foreground)/0.08)] relative ${padding}`
   let quoteClasses = ""
   let nameClasses = ""
   let companyClasses = ""
@@ -86,7 +86,7 @@ const TestimonialCard = ({ quote, name, company, avatar, type }) => {
       />
     )
   } else if (type === "large-light") {
-    cardClasses += " bg-background-white border border-border shadow-sm"
+    cardClasses += " bg-card border border-border shadow-sm"
     quoteClasses += " text-foreground text-2xl font-medium leading-8"
     nameClasses += " text-foreground text-base font-normal leading-6"
     companyClasses += " text-muted text-base font-normal leading-6"
@@ -98,7 +98,7 @@ const TestimonialCard = ({ quote, name, company, avatar, type }) => {
       />
     )
   } else {
-    cardClasses += " bg-background-white border border-border shadow-sm"
+    cardClasses += " bg-card border border-border shadow-sm"
     quoteClasses += " text-foreground/85 text-[17px] font-normal leading-6"
     nameClasses += " text-foreground text-sm font-normal leading-[22px]"
     companyClasses += " text-muted text-sm font-normal leading-[22px]"
@@ -115,8 +115,7 @@ const TestimonialCard = ({ quote, name, company, avatar, type }) => {
           alt={`${name} avatar`}
           width={avatarSize}
           height={avatarSize}
-          className={`w-${avatarSize / 4} h-${avatarSize / 4} ${avatarBorderRadius}`}
-          style={{ border: "1px solid rgba(255, 255, 255, 0.08)" }}
+          className={`w-${avatarSize / 4} h-${avatarSize / 4} ${avatarBorderRadius} border border-border`}
         />
         <div className="flex flex-col justify-start items-start gap-0.5">
           <div className={nameClasses}>{name}</div>

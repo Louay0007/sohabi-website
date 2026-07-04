@@ -6,7 +6,7 @@ export function LargeTestimonial() {
       <div className="flex-1 flex flex-col justify-start items-start overflow-hidden">
         <div className="self-stretch px-4 py-12 md:px-6 md:py-16 lg:py-28 flex flex-col justify-start items-start gap-2">
           <div className="self-stretch flex justify-between items-center">
-            <div className="flex-1 px-4 py-8 md:px-12 lg:px-20 md:py-8 lg:py-10 overflow-hidden rounded-lg bg-background-white border border-border shadow-sm flex flex-col justify-center items-center gap-6 md:gap-8 lg:gap-11">
+            <div className="flex-1 px-4 py-8 md:px-12 lg:px-20 md:py-8 lg:py-10 overflow-hidden rounded-lg bg-card border border-border shadow-sm flex flex-col justify-center items-center gap-6 md:gap-8 lg:gap-11">
               <div className="w-full max-w-[1024px] text-center text-foreground leading-7 md:leading-10 lg:leading-[64px] font-medium text-lg md:text-3xl lg:text-6xl">
                 {
                   "SOHABI made my first week in a new city feel less lonely. One coffee invite became a study group, then real friends."
@@ -18,8 +18,7 @@ export function LargeTestimonial() {
                   alt="SOHABI member avatar"
                   width={48}
                   height={48}
-                  className="w-12 h-12 relative rounded-full"
-                  style={{ border: "1px solid rgba(44, 46, 42, 0.08)" }}
+                  className="w-12 h-12 relative rounded-full border border-border"
                 />
                 <div className="flex flex-col justify-start items-start">
                   <div className="text-foreground text-base font-medium leading-6">Nour El Amrani</div>

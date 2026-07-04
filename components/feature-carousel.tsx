@@ -136,11 +136,11 @@ export function FeatureCarousel() {
 
   return (
     <div className="w-full max-w-7xl mx-auto z-10 px-0 md:px-4">
-      <div className="relative overflow-hidden rounded-[2rem] md:rounded-[3rem] lg:rounded-[4rem] flex flex-col lg:flex-row min-h-[660px] lg:aspect-video border border-border bg-background-white shadow-[0_24px_80px_rgba(47,49,42,0.10)]">
-        <div className="relative z-30 w-full lg:w-[40%] min-h-[350px] md:min-h-[430px] lg:h-full flex flex-col items-start justify-center overflow-hidden px-7 md:px-12 lg:px-14 bg-[#FBF5E8] text-foreground">
-          <div className="absolute inset-0 opacity-80 bg-[radial-gradient(circle_at_20%_15%,#FFFFFF_0%,transparent_30%),radial-gradient(circle_at_80%_85%,#E0DBCE_0%,transparent_34%)]" />
-          <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#FBF5E8] via-[#FBF5E8]/90 to-transparent z-40" />
-          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#FBF5E8] via-[#FBF5E8]/90 to-transparent z-40" />
+      <div className="relative overflow-hidden rounded-[2rem] md:rounded-[3rem] lg:rounded-[4rem] flex flex-col lg:flex-row min-h-[660px] lg:aspect-video border border-border bg-card shadow-[0_24px_80px_hsl(var(--foreground)/0.10)]">
+        <div className="relative z-30 w-full lg:w-[40%] min-h-[350px] md:min-h-[430px] lg:h-full flex flex-col items-start justify-center overflow-hidden px-7 md:px-12 lg:px-14 bg-secondary text-foreground">
+          <div className="absolute inset-0 opacity-80 bg-[radial-gradient(circle_at_20%_15%,hsl(var(--card))_0%,transparent_30%),radial-gradient(circle_at_80%_85%,hsl(var(--accent))_0%,transparent_34%)]" />
+          <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-background-warm via-background-warm/90 to-transparent z-40" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background-warm via-background-warm/90 to-transparent z-40" />
 
           <div className="relative w-full h-full flex items-center justify-center lg:justify-start z-20">
             {FEATURES.map((feature, index) => {
@@ -167,8 +167,8 @@ export function FeatureCarousel() {
                     className={cn(
                       "relative flex items-center gap-4 px-5 md:px-8 py-3.5 md:py-4 rounded-full transition-all duration-500 text-left border backdrop-blur-sm",
                       isActive
-                        ? "bg-foreground text-background border-foreground shadow-[0_12px_40px_rgba(47,49,42,0.18)]"
-                        : "bg-background-white/65 text-muted-foreground border-border hover:text-foreground hover:border-foreground/30"
+                        ? "bg-foreground text-background border-foreground shadow-[0_12px_40px_hsl(var(--foreground)/0.18)]"
+                        : "bg-card/65 text-muted-foreground border-border hover:text-foreground hover:border-foreground/30"
                     )}
                   >
                     <Icon className={cn("h-5 w-5 transition-colors", isActive ? "text-background" : "text-muted-foreground")} />
@@ -182,13 +182,13 @@ export function FeatureCarousel() {
           </div>
         </div>
 
-        <div className="flex-1 min-h-[520px] md:min-h-[620px] lg:h-full relative bg-[linear-gradient(135deg,#FBF5E8_0%,#F5F1E4_45%,#E0DBCE_100%)] flex items-center justify-center py-14 md:py-20 lg:py-16 px-6 md:px-12 overflow-hidden border-t lg:border-t-0 lg:border-l border-border">
-          <div className="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_25%_20%,#FFFFFF_0%,transparent_24%),radial-gradient(circle_at_78%_74%,#C3C0B5_0%,transparent_32%)]" />
-          <div className="absolute left-8 top-8 rounded-full border border-border bg-background-white/75 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+        <div className="flex-1 min-h-[560px] md:min-h-[660px] lg:h-full relative bg-[linear-gradient(135deg,hsl(var(--background-warm))_0%,hsl(var(--background))_45%,hsl(var(--accent))_100%)] flex flex-col items-center justify-center gap-8 py-12 md:py-16 lg:py-14 px-6 md:px-12 overflow-hidden border-t lg:border-t-0 lg:border-l border-border">
+          <div className="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_25%_20%,hsl(var(--card))_0%,transparent_24%),radial-gradient(circle_at_78%_74%,hsl(var(--primary-light))_0%,transparent_32%)]" />
+          <div className="relative z-30 rounded-full border border-border bg-card/80 px-5 py-2 text-[11px] font-medium uppercase tracking-[0.24em] text-muted-foreground shadow-sm backdrop-blur-md">
             SOHABI features
           </div>
 
-          <div className="relative w-full max-w-[440px] aspect-[4/5] flex items-center justify-center">
+          <div className="relative z-20 w-full max-w-[420px] md:max-w-[440px] aspect-[4/5] flex items-center justify-center">
             {FEATURES.map((feature, index) => {
               const status = getCardStatus(index)
               const isActive = status === "active"
@@ -201,15 +201,15 @@ export function FeatureCarousel() {
                   key={feature.id}
                   initial={false}
                   animate={{
-                    x: isActive ? 0 : isPrev ? -112 : isNext ? 112 : 0,
-                    scale: isActive ? 1 : isPrev || isNext ? 0.86 : 0.7,
-                    opacity: isActive ? 1 : isPrev || isNext ? 0.38 : 0,
+                    x: isActive ? 0 : isPrev ? -88 : isNext ? 88 : 0,
+                    scale: isActive ? 1 : isPrev || isNext ? 0.84 : 0.7,
+                    opacity: isActive ? 1 : isPrev || isNext ? 0.3 : 0,
                     rotate: isPrev ? -4 : isNext ? 4 : 0,
                     zIndex: isActive ? 20 : isPrev || isNext ? 10 : 0,
                     pointerEvents: isActive ? "auto" : "none",
                   }}
                   transition={{ type: "spring", stiffness: 260, damping: 26, mass: 0.8 }}
-                  className="absolute inset-0 rounded-[2rem] md:rounded-[2.75rem] overflow-hidden border-[10px] border-background-white bg-background-white origin-center shadow-[0_18px_70px_rgba(47,49,42,0.18)]"
+                  className="absolute inset-0 rounded-[2rem] md:rounded-[2.75rem] overflow-hidden border-[10px] border-card bg-card origin-center shadow-[0_18px_70px_hsl(var(--foreground)/0.18)]"
                 >
                   <img
                     src={feature.image}
@@ -219,7 +219,7 @@ export function FeatureCarousel() {
                       isActive ? "grayscale-0 blur-0 opacity-100" : "grayscale blur-[2px] opacity-65"
                     )}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#20221F]/95 via-[#20221F]/42 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground-deep/95 via-foreground-deep/42 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-8 md:p-10 pt-32 flex flex-col justify-end pointer-events-none">
                     <AnimatePresence mode="wait">
                       {isActive && (
@@ -243,7 +243,7 @@ export function FeatureCarousel() {
                   </div>
 
                   <div className={cn("absolute top-7 left-7 flex items-center gap-3 transition-opacity duration-300", isActive ? "opacity-100" : "opacity-0")}>
-                    <div className="h-2.5 w-2.5 rounded-full bg-background shadow-[0_0_12px_rgba(245,241,228,0.9)]" />
+                    <div className="h-2.5 w-2.5 rounded-full bg-background shadow-[0_0_12px_hsl(var(--background)/0.9)]" />
                     <span className="text-background/85 text-[10px] font-medium uppercase tracking-[0.28em]">
                       {feature.meta}
                     </span>

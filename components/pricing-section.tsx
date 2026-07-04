@@ -22,7 +22,7 @@ export function PricingSection() {
       ],
       buttonText: "Start free",
       buttonClass:
-        "bg-zinc-300 shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] outline outline-0.5 outline-[#1e29391f] outline-offset-[-0.5px] text-gray-800 text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-zinc-400",
+        "bg-secondary shadow-sm outline outline-0.5 outline-border outline-offset-[-0.5px] text-foreground  hover:bg-accent",
     },
     {
       name: "Coffee Plus",
@@ -40,7 +40,7 @@ export function PricingSection() {
       ],
       buttonText: "Join Coffee Plus",
       buttonClass:
-        "bg-primary-foreground shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] text-primary text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-primary-foreground/90",
+        "bg-primary-foreground shadow-sm text-primary  hover:bg-primary-foreground/90",
       popular: true,
     },
     {
@@ -57,7 +57,7 @@ export function PricingSection() {
       ],
       buttonText: "Talk to us",
       buttonClass:
-        "bg-secondary shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] text-secondary-foreground text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-secondary/90",
+        "bg-secondary shadow-sm text-secondary-foreground  hover:bg-secondary/90",
     },
   ]
 
@@ -73,7 +73,7 @@ export function PricingSection() {
           </p>
         </div>
         <div className="pt-4">
-          <div className="p-0.5 bg-background-white rounded-lg border border-border flex justify-start items-center gap-1 md:mt-0">
+          <div className="p-0.5 bg-card rounded-lg border border-border flex justify-start items-center gap-1 md:mt-0">
             <button
               onClick={() => setIsAnnual(true)}
               className={`pl-2 pr-1 py-1 flex justify-start items-start gap-2 rounded-md ${isAnnual ? "bg-primary shadow-sm" : ""}`}
@@ -101,7 +101,7 @@ export function PricingSection() {
         {pricingPlans.map((plan) => (
           <div
             key={plan.name}
-            className={`flex-1 p-4 overflow-hidden rounded-xl flex flex-col justify-start items-start gap-6 ${plan.popular ? "bg-primary shadow-sm" : "bg-background-white border border-border"}`}
+            className={`flex-1 p-4 overflow-hidden rounded-xl flex flex-col justify-start items-start gap-6 ${plan.popular ? "bg-primary shadow-sm" : "bg-card border border-border"}`}
           >
             <div className="self-stretch flex flex-col justify-start items-start gap-6">
               <div className="self-stretch flex flex-col justify-start items-start gap-8">
@@ -160,7 +160,7 @@ export function PricingSection() {
                 </div>
               </div>
               <Button
-                className={`self-stretch px-5 py-2 rounded-[40px] flex justify-center items-center ${plan.popular ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90" : "bg-background-white text-foreground border border-border hover:bg-background-warm"}`}
+                className={`self-stretch px-5 py-2 rounded-[40px] flex justify-center items-center ${plan.popular ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90" : "bg-card text-foreground border border-border hover:bg-accent"}`}
               >
                 <div className="px-1.5 flex justify-center items-center gap-2">
                   <span

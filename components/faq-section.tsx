@@ -51,7 +51,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle }: FAQItemProps) => {
   }
   return (
     <div
-      className={`w-full bg-background-white border border-border shadow-sm overflow-hidden rounded-[10px] transition-all duration-500 ease-out cursor-pointer`}
+      className={`w-full bg-card border border-border shadow-sm overflow-hidden rounded-[10px] transition-all duration-500 ease-out cursor-pointer`}
       onClick={handleClick}
     >
       <div className="w-full px-5 py-[18px] pr-4 flex justify-between items-center gap-5 text-left transition-all duration-300 ease-out">

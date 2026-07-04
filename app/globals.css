@@ -48,19 +48,64 @@
 
     --radius: 0.5rem;
   }
+
+  .dark {
+    /* Night coffee palette: charcoal surfaces, warm cream text, sand borders. */
+    --background: 100 5% 13%; /* #20221F */
+    --background-warm: 77 8% 18%; /* #2F312A */
+    --background-white: 80 6% 16%; /* #292B27 */
+    --foreground: 46 46% 93%; /* #F5F1E4 */
+    --foreground-deep: 41 70% 95%; /* #FBF5E8 */
+
+    --muted: 47 10% 74%; /* #C3C0B5 */
+    --muted-foreground: 47 12% 74%;
+    --muted-foreground-light: 43 22% 84%;
+    --muted-foreground-dark: 47 7% 62%;
+
+    --card: 80 6% 16%;
+    --card-foreground: 46 46% 93%;
+
+    --popover: 80 6% 16%;
+    --popover-foreground: 46 46% 93%;
+
+    --surface-warm: 78 7% 19%;
+    --surface-recessed: 84 6% 23%;
+    --border: 78 7% 27%;
+    --border-light: 47 10% 74% / 0.22;
+    --border-dark: 46 46% 93% / 0.18;
+
+    --primary: 46 46% 93%;
+    --primary-foreground: 100 5% 13%;
+    --primary-light: 47 10% 74%;
+    --primary-dark: 41 70% 95%;
+
+    --secondary: 78 7% 19%;
+    --secondary-foreground: 46 46% 93%;
+
+    --accent: 84 6% 23%;
+    --accent-foreground: 46 46% 93%;
+    --accent-coral: 47 10% 74%;
+    --accent-sunshine: 78 7% 19%;
+
+    --input: 78 7% 27%;
+    --ring: 47 10% 74%;
+    --destructive: 12 45% 48%;
+    --destructive-foreground: 46 46% 93%;
+  }
 }
 @layer base {
   * {
     @apply border-border;
   }
   html {
-    @apply bg-[#F5F1E4];
+    @apply bg-background;
     font-family: var(--font-sf-pro);
     text-rendering: optimizeLegibility;
+    color-scheme: light;
   }
 
   body {
-    @apply bg-[#F5F1E4] text-[#2F312A];
+    @apply bg-background text-foreground;
     font-family: var(--font-sf-pro);
     font-weight: 400;
     letter-spacing: -0.01em;
@@ -80,4 +125,8 @@
   strong {
     font-weight: 500;
   }
+}
+
+.dark {
+  color-scheme: dark;
 }
